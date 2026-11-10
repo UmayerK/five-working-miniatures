@@ -10,11 +10,13 @@ import { experiences, pathOf } from './experiences/registry'
 import { ErrorBoundary } from './shell/ErrorBoundary'
 import { TransitionProvider } from './shell/transition'
 import Hub from './hub/Hub'
+import { Notice } from './shell/Notice'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <TransitionProvider>
+        <Notice />
         <ErrorBoundary>
           {/* The curtain covers the screen while a chunk loads, so no visible fallback is needed. */}
           <Suspense fallback={null}>
